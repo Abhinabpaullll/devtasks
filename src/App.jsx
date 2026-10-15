@@ -73,6 +73,7 @@ import NumberBaseConverter from "./pages/DevUtilities/devutilities/NumberBaseCon
 import PasswordGenerator from "./pages/DevUtilities/devutilities/PasswordGenerator";
 import QrCodeGenerator from "./pages/DevUtilities/devutilities/QrCodeGenerator";
 import RegexTester from "./pages/DevUtilities/devutilities/RegexTester";
+import CssSelectorTester from "./pages/DevUtilities/devutilities/CssSelectorTester";
 import SemverCalculator from "./pages/DevUtilities/devutilities/SemverCalculator.jsx";
 import ShapeDividerGenerator from "./pages/DevUtilities/devutilities/ShapeDividerGenerator";
 import SqlFormatter from "./pages/DevUtilities/devutilities/SqlFormatter";
@@ -127,6 +128,8 @@ import { SidebarProvider } from "./context/SidebarContext";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import useKeyboardShortcuts from "./hooks/useKeyboardShortcuts";
 import "./index.css";
+
+import KeyboardInspector from "./pages/DevUtilities/devutilities/KeyboardInspector";
 
 function App() {
   const [hudVisible, setHudVisible] = useState(false);
@@ -327,11 +330,9 @@ function AppInner({ toggleHUD, hudVisible }) {
 
   return (
     <div
-      className={`w-full ${
-        showNavbar ? "h-screen overflow-hidden flex flex-col" : "min-h-screen"
-      } transition-colors duration-300 ${
-        dark ? "bg-zinc-950 text-white" : "bg-[#FDFDFD] text-black"
-      }`}
+      className={`w-full ${showNavbar ? "h-screen overflow-hidden flex flex-col" : "min-h-screen"
+        } transition-colors duration-300 ${dark ? "bg-zinc-950 text-white" : "bg-[#FDFDFD] text-black"
+        }`}
     >
       <SplashScreen />
 
@@ -374,6 +375,10 @@ function AppInner({ toggleHUD, hudVisible }) {
               <Route
                 path="/devutilities/yaml-toml"
                 element={<YamlTomlConverter />}
+              />
+
+              <Route path="/devutilities/keyboard-inspector"
+                element={<KeyboardInspector />}
               />
 
               {/* Snippet Vault */}
@@ -423,6 +428,10 @@ function AppInner({ toggleHUD, hudVisible }) {
                 element={<CubicBezierGenerator />}
               />
               <Route path="/devutilities/regex" element={<RegexTester />} />
+	      <Route
+                    path="/devutilities/css-selector-tester"
+                    element={<CssSelectorTester />}
+              />
               <Route
                 path="/devutilities/css-unit-converter"
                 element={<CssUnitConverter />}
@@ -734,8 +743,8 @@ function AppInner({ toggleHUD, hudVisible }) {
                 element={<SecurityHeaders />}
               />
               <Route
-                  path="/devutilities/css-cursor-playground"
-                  element={<CssCursorPlayground />}
+                path="/devutilities/css-cursor-playground"
+                element={<CssCursorPlayground />}
               />
               <Route
                 path="/devutilities/html-css-minifier"
@@ -755,6 +764,8 @@ function AppInner({ toggleHUD, hudVisible }) {
               />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+
+
           </div>
           {showNavbar && <Footer />}
         </div>
