@@ -64,6 +64,11 @@ const DevUtilities = () => {
 
   const cards = [
     {
+      title: "HTML & CSS Minifier & Beautifier",
+      description:
+        "Minify, compress, format, and beautify HTML and CSS code client-side offline.",
+      category: "Code & Text",
+      path: "/devutilities/html-css-minifier",
       title: "Keyboard Keycode & Event Inspector",
       description:
         "Inspect keyboard keys, key codes, and keyboard event information in real time.",
@@ -88,6 +93,7 @@ const DevUtilities = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
             d="M7 10h.01M11 10h.01M15 10h.01M7 14h10"
           />
         </svg>
