@@ -194,6 +194,10 @@ const SIDEBAR_SECTIONS = [
         path: "/devutilities/regex",
       },
       {
+ 	 label: "CSS Selector Tester",
+ 	 path: "/devutilities/css-selector-tester",
+       },
+      {
         label: "Text Processing Suite",
         description:
           "Convert string cases, inspect text layout, analyze word densities, and sort/clean lists",
@@ -583,6 +587,12 @@ const SIDEBAR_SECTIONS = [
         description:
           "Transform SQL CREATE TABLE statements into interactive entity-relationship diagrams.",
         path: "/devutilities/sql-erd",
+      },
+      {
+        label: "HTML & CSS Minifier & Beautifier",
+        description:
+          "Minify, compress, format, and beautify HTML and CSS code client-side offline.",
+        path: "/devutilities/html-css-minifier",
       },
     ],
   },
